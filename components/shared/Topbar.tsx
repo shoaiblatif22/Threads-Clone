@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { OrganizationSwitcher, SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 function Topbar() {
+
+    console.log("Topbar component rendered");
     return (
         <nav className="topbar">
             <Link href="/" className="flex items-center gap-4">
@@ -27,6 +29,24 @@ function Topbar() {
                         </SignOutButton>
                     </SignedIn>
                 </div>
+                   
+              
+                           
+                    <OrganizationSwitcher 
+                        defaultOpen={true}
+                        appearance={{
+                            elements: {
+                                organizationSwitcherTrigger: "py-2 px-4"
+                            }
+                        }}
+                
+                    />
+                    
+
+                    
+
+                   
+                                
             </div>
         </nav>
     )
